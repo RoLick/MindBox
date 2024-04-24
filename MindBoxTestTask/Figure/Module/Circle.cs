@@ -2,22 +2,15 @@
 
 namespace MindBoxTestTask.Figure;
 
-public class Circle : IFigure
+public class Circle(double radius) : IFigure
 {
-    private double _radius;
-
-    public Circle(double radius)
-    {
-        _radius = radius;
-    }
-
     public double CalculateArea()
     {
-        if (double.IsNaN(_radius) || _radius <= 0)
+        if (double.IsNaN(radius) || radius <= 0)
         {
             throw new Exception("Радиус не может быть меньше нуля");
         }
         
-        return Math.PI * Math.Pow(_radius, 2);
+        return Math.PI * Math.Pow(radius, 2);
     }
 }
