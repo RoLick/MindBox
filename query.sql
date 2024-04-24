@@ -16,8 +16,6 @@ CREATE TABLE ProductCategory (
 	PRIMARY KEY (ProductId, CategoryId)
 );
 
-use test_database
-
 INSERT INTO Product (ID, "Name")
 VALUES 
 (1, 'IPhone'),
