@@ -11,8 +11,13 @@ public class Circle : IFigure
         _radius = radius;
     }
 
-    public double GetSquare()
+    public double CalculateArea()
     {
+        if (double.IsNaN(_radius) || _radius <= 0)
+        {
+            throw new Exception("Радиус не может быть меньше нуля");
+        }
+        
         return Math.PI * Math.Pow(_radius, 2);
     }
 }

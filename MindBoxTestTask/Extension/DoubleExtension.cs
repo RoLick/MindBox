@@ -12,6 +12,11 @@ public static class DoubleExtension
     
     public static bool EqualsWithTolerance(this double left, double right, int toleranceRate = 2)
     {
+        if (double.IsNaN(left) && double.IsNaN(right))
+        {
+            return true;
+        }
+        
         var tolerance = toleranceRate switch
         {
             1 => _1,
